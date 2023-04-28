@@ -3,7 +3,11 @@ guid: 90f6157cfc12f034ea29f6a217dad095
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - spriteRenderer: {instanceID: 0}
+  - YellowBus: {fileID: 21300000, guid: 7aa42790916152143a3b00c07f22dd84, type: 3}
+  - BlueCar: {fileID: 21300000, guid: ad60e07008c3f0c48b9976d63102af6e, type: 3}
+  - Racer: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
