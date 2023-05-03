@@ -39,6 +39,10 @@ public class Collision : MonoBehaviour
             scoreBoard.gainScore(30, "Package Delivery +30");
             timer.resetTimer();
         }
+        
+        
+        
+    
      }
     
      

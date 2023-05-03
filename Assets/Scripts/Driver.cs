@@ -14,6 +14,7 @@ public class Driver : MonoBehaviour
     public Sprite YellowBus;
     public Sprite BlueCar;
     public Sprite Racer;
+    public Transform playerSpawnPoint;
     void ChangeSprite(Sprite newSprite) {
         spriteRenderer.sprite = newSprite; 
     }
@@ -25,13 +26,24 @@ public class Driver : MonoBehaviour
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
       
     }
+     private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            // teleport the player to the spawn point
+            Debug.Log("start over");
+            gameObject.transform.position = playerSpawnPoint.position;
+        }
+    }
      
     private void OnTriggerEnter2D(Collider2D other) {
        if(other.tag == "Boost"){
           moveSpeed = boostSpeed;
+          
         }
         else if(other.tag == "Slower"){
             moveSpeed = slowSpeed;
+            
         }
          if(other.gameObject.tag == "Big Boi"){
             gameObject.transform.localScale +=  new Vector3(1,1, 0);
@@ -53,11 +65,11 @@ public class Driver : MonoBehaviour
             ChangeSprite(Racer);
             StartCoroutine(RacerCar(15));
             Destroy(other.gameObject, 0.2f);
-        } 
+        }
 
-    }
-     void OnTriggerExit2D(Collider2D other) {
-         moveSpeed = 20;
+      
+    void OnTriggerExit2D(Collider2D other) {
+         moveSpeed = 10f;
         
     }
 
@@ -81,6 +93,8 @@ public class Driver : MonoBehaviour
      yield return new WaitForSeconds(time);
             ChangeSprite(BlueCar);
     }
+
+}
 
     
 

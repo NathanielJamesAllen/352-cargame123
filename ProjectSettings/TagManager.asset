@@ -12,6 +12,8 @@ TagManager:
   - Lil Goy
   - Bus
   - Racer
+  - Waypoints
+  - Enemy
   layers:
   - Default
   - TransparentFX
