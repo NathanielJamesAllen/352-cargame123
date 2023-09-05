@@ -26,9 +26,9 @@ public class Collision : MonoBehaviour
             Debug.Log("Picked Up A Package");
             hasPackage = true;
             spriteRenderer.color = hasPackageColor;
-            Destroy(other.gameObject, 0.1f);
             scoreBoard.gainScore(10, "Package Pickup +10");
             timer.resetTimer();
+            Destroy(other.gameObject, 0.1f);
         }
        
         
