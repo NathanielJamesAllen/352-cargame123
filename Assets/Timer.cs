@@ -29,7 +29,7 @@ public class Timer : MonoBehaviour
         timerString.text = timer.ToString("0.##");
         if(flashingTimer && microTimer > flashDuration){
             microTimer = 0;
-            flasher.flash();
+            //flasher.flash();
             flashCount++;
             if(flashCount > maxFlashes){
                 flashingTimer = false;
